@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 def get_short_link(token, url):
     headers = {
         'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json',
     }
     data = {
         "long_url": url,

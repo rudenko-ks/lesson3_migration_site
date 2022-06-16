@@ -63,14 +63,10 @@ def main():
     parser.add_argument("url", help="Ссылка")
     args = parser.parse_args()
 
-    try:
-        if not is_bitlink(TOKEN, args.url):
-            print('Your short link:', get_short_link(TOKEN, args.url))
-        else:
-            print('Click counts for bitlink:', count_clicks(TOKEN, args.url))
-    except requests.exceptions.HTTPError as error:
-        print('Request error:\n', error.response)
-        print('Request error:\n', error.response.text)
+    if not is_bitlink(TOKEN, args.url):
+        print('Your short link:', get_short_link(TOKEN, args.url))
+    else:
+        print('Click counts for bitlink:', count_clicks(TOKEN, args.url))
 
 if __name__ == '__main__':
     load_dotenv()

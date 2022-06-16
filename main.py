@@ -40,8 +40,6 @@ def count_clicks(token, bitlink):
     response.raise_for_status()
 
     number_clicks = response.json()['link_clicks']
-    if not number_clicks:
-        return 0
 
     return number_clicks[0]['clicks']
 

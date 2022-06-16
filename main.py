@@ -3,9 +3,6 @@ import requests
 import argparse
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-load_dotenv()
-
-TOKEN = os.environ['BITLY_API_TOKEN']
 
 
 def get_short_link(token, url):
@@ -79,4 +76,6 @@ def main():
         print('Request error:\n', error.response.text)
 
 if __name__ == '__main__':
+    load_dotenv()
+    TOKEN = os.environ['BITLY_API_TOKEN']
     main()

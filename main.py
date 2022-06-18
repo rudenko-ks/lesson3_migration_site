@@ -57,18 +57,19 @@ def is_bitlink(token, bitlink):
 
 
 def main():
+    load_dotenv()
+    token = os.environ['BITLY_API_TOKEN']
+
     parser = argparse.ArgumentParser(
         description="Скрипт возвращает короткую ссылку в сервисе bitly.\
         Если передаваемая ссылка уже короткая, то отображается количество переходов по ней.")
     parser.add_argument("url", help="Ссылка")
     args = parser.parse_args()
 
-    if not is_bitlink(TOKEN, args.url):
-        print('Your short link:', get_short_link(TOKEN, args.url))
+    if not is_bitlink(token, args.url):
+        print('Your short link:', get_short_link(token, args.url))
     else:
-        print('Click counts for bitlink:', count_clicks(TOKEN, args.url))
+        print('Click counts for bitlink:', count_clicks(token, args.url))
 
 if __name__ == '__main__':
-    load_dotenv()
-    TOKEN = os.environ['BITLY_API_TOKEN']
     main()

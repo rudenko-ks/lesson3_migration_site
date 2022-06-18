@@ -43,6 +43,17 @@ python main.py url [-h]
 
 `-h, --help` - show program help
   
+#### An example of script execution if the argument is a regular link
+```
+python main.py https://dvmn.org
+Your short link: https://bit.ly/3O00OkJ
+```
+#### An example of executing a script if the argument is a `bitly` link
+```
+python main.py https://bit.ly/3O00OkJ
+Click counts for bitlink: 1
+```
+
 ### Project Goals
 
 The code is written for educational purposes on online-course for web-developers [dvmn.org](https://dvmn.org/).
@@ -94,6 +105,17 @@ python main.py url [-h]
 ***Дополнительно:***
 
 `-h, --help` - отобразить помощь по программе
+
+#### Пример выполнения скрипта если в случае аргумента выступает обычная ссылка
+```
+python main.py https://dvmn.org
+Your short link: https://bit.ly/3O00OkJ
+```
+#### Пример выполнения скрипта если в случае аргумента выступает `bitly` ссылка
+```
+python main.py https://bit.ly/3O00OkJ
+Click counts for bitlink: 1
+```
 
 ### Цель проекта
 
